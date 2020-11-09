@@ -1,0 +1,228 @@
+/* HEADER START */
+
+body {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    padding-left: 236px;
+}
+
+#menu li {
+    padding-left: 10px;
+}
+
+#menu li span {
+    padding-left: 10px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #22313F;
+}
+
+#menu a {
+    font-size: 14px;
+    color: #0275d8;
+    text-decoration: none;
+}
+
+
+
+
+
+.lang-bar li {
+    padding-left: 10px;
+}
+
+.lang-bar li span {
+    padding-left: 10px;
+}
+
+.lang-bar  a {
+    font-size: 12px;
+    color: #0275d8;
+    text-decoration: none;
+}
+
+
+/* HEADER END */
+
+
+
+/* FOOTER START */
+
+footer {
+    text-align: center;
+}
+
+/* FOOTER END */
+
+
+
+
+/* SubmitNewPlanet START */
+
+#submit_new_planet {
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+#submit_new_planet form input {
+    margin-bottom: 5px;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+}
+
+#submit_new_planet form select {
+    margin-bottom: 5px;
+    display: block;
+    width: 104%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+}
+
+
+#submit_new_planet form button{
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+}
+
+/* SubmitNewPlanet END */
+
+
+/*AstronomyPictureOfTheDay START*/
+
+.input_date {
+    width: 150px;
+    border: 1px solid #44c8f9;
+    color: #44c8f9;
+    background: rgba(68, 200, 249, 0.15);
+    font-size: 12px;
+    padding: 6px 24px;
+    border-radius: 6px;
+    margin-left: 25px;
+
+}
+
+.button_go {
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    margin-left: 25px;
+}
+
+/*AstronomyPictureOfTheDay END*/
+
+
+
+
+
+
+/*NearbyAsteroids START*/
+
+#asteroids_table {
+    max-width: 960px;
+    margin: 0 auto;
+    border: 1px solid #eceeef;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+
+#asteroids_table thead tr th {
+    border: 1px solid #eceeef;
+    border-bottom: 2px solid #eceeef;
+    padding: .75rem;
+    line-height: 1.5;
+}
+
+
+#asteroids_table tbody tr td {
+    border: 1px solid #eceeef;
+
+    padding: .75rem;
+    line-height: 1.5;
+    vertical-align: top;
+}
+/*NearbyAsteroids END*/
+
+
+
+/* AstronomyPictureOfTheDay START  */
+
+#apod_info {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#apod_info h5 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 1.25rem;
+    color: #373a3c;
+
+}
+
+#apod_info p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif !important;
+    color: #373a3c;
+
+}
+
+/* AstronomyPictureOfTheDay END  */
+
+
+
+/* Pagination Start  */
+
+#pagination {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+/* Pagination END  */
