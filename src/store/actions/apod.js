@@ -4,7 +4,6 @@ export const APOD_FAIL = 'APOD_FAIL';
 
 
 export function actionsApod(date) {
-    console.log('action date', date)
     return {
         type: APOD_REQUEST, payload: {date},
     };

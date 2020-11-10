@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 
 
@@ -9,19 +8,17 @@ class Pagination extends Component {
         this.state = {
             offset: 0,
             data: [],
-            perPage: 2,
-            currentPage: 0
+            perPage: 5,
+            currentPage: 0,
         };
-        this.handlePageClick = this
-            .handlePageClick
-            .bind(this);
     }
-    receivedData() {
-        axios
-            .get(`https://jsonplaceholder.typicode.com/photos`)
-            .then(res => {
 
-                const data = res.data;
+    componentDidMount() {
+        this.receivedData()
+    }
+
+    receivedData = () => {
+                const data = this.props.arr;
                 const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const postData = slice.map(pd => <React.Fragment>
                     <p>{pd.title}</p>
@@ -33,7 +30,7 @@ class Pagination extends Component {
 
                     postData
                 })
-            });
+
     }
     handlePageClick = (e) => {
         const selectedPage = e.selected;
@@ -47,11 +44,8 @@ class Pagination extends Component {
         });
 
     };
-
-    componentDidMount() {
-        this.receivedData()
-    }
     render() {
+        console.log('this.props.arr this.props.arr this.props.arr', this.props.arr)
         return (
             <div id='pagination'>
                 {this.state.postData}

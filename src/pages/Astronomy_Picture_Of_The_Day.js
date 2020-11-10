@@ -4,15 +4,10 @@ import Carousel from "nuka-carousel";
 import {connect} from "react-redux";
 import {actionsApod} from "../store/actions/apod";
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 class AstronomyPictureOfTheDay extends Component {
     static propTypes = {
         actionsApod: PropTypes.func,
-    }
-
-    componentDidMount() {
-        this.props.actionsApod()
     }
 
     constructor(props) {
@@ -21,6 +16,11 @@ class AstronomyPictureOfTheDay extends Component {
             date: ''
         }
     }
+
+    componentDidMount() {
+        this.props.actionsApod()
+    }
+
 
     handleChange = (e) => {
         this.setState({
@@ -33,7 +33,6 @@ class AstronomyPictureOfTheDay extends Component {
     }
 
     render() {
-        console.log("this.state this.state this.state", this.state)
         return (
             <Wrapper>
                 <p>Each day a different image or photograph of our fascinating universe is featured, along with a
@@ -55,7 +54,6 @@ class AstronomyPictureOfTheDay extends Component {
     }
 }
 
-// export default AstronomyPictureOfTheDay;
 const mapStateToProps = (state) => ({
     apodData: state.apod.apodData,
 });
