@@ -1,9 +1,9 @@
 import { all, fork } from "redux-saga/effects";
-// import blog from "./blog";
+import apod from "./apod";
 
 export default function* root() {
     const sagas = [
-        // blog,
+        apod,
     ];
     yield all(sagas.map(fork));
 }

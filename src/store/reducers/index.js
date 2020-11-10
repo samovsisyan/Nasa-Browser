@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-// import blog from './blog';
+import apod from './apod';
 
 export default combineReducers({
-    // blog,
+    apod,
 });
