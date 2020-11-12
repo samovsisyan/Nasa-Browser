@@ -7,7 +7,8 @@ import {connect} from "react-redux";
 
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Pagination from "../components/Pagination";
+import ReactPaginate from "react-paginate";
+
 
 
 class NearbyAsteroids extends Component {
@@ -21,16 +22,16 @@ class NearbyAsteroids extends Component {
         this.state = {
             startDate: '',
             endDate: '',
-            arr: []
+            arr: [],
+
+
+
+            offset: 0,
+            data: [],
+            perPage: 3,
+            currentPage: 0
         };
     }
-
-
-
-    componentDidMount() {
-        this.props.actionsAsteroids()
-    }
-
 
     handleChangeStart = (e) => {
         this.setState({
@@ -50,16 +51,68 @@ class NearbyAsteroids extends Component {
 
 
 
-
-    render() {
+    receivedData = () => {
         const result = _.values(this.props.asteroidsData.near_earth_objects);
         let arr = [];
         for (let i = 0; i < result.length; i++) {
+
             for (let j = 0; j < result[i].length; j++) {
-                arr.push(result[i][j]);
-            }
+                const element = {}
+                element.name = result[i][j].name;
+                element.absolute = result[i][j].absolute_magnitude_h;
+                element.feet_min = result[i][j].estimated_diameter.feet.estimated_diameter_min;
+                element.feet_max = result[i][j].estimated_diameter.feet.estimated_diameter_max;
+                element.potentially	 = 'No';
+                element.meters_min = result[i][j].estimated_diameter.meters.estimated_diameter_max;
+                element.meters_max = result[i][j].estimated_diameter.meters.estimated_diameter_max;
+                arr.push(element);
+           }
         }
-        // console.log('arr arr arr arr......... arr', arr)
+
+                const data = arr;
+                const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+                const postData = slice.map(data => <>
+                    {/*<p>{pd.name}</p>*/}
+                    <tr key={data.meters_min}>
+                        <td>{data.name}</td>
+                        <td>{data.feet_min} -
+                            {data.feet_max}</td>
+                        <td>{data.absolute}</td>
+                        <td>{data.potentially}</td>
+                        <td>{data.meters_min} -
+                            {data.meters_max}</td>
+                    </tr>
+                </>)
+
+                this.setState({
+                    pageCount: Math.ceil(data.length / this.state.perPage),
+
+                    postData
+                })
+    }
+    handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
+
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.receivedData()
+        });
+
+    };
+
+    componentDidMount() {
+        this.receivedData()
+    }
+
+
+
+
+    render() {
+
+        console.log(11111111, this.state.postData)
         // console.log('this.props.asteroidsData', this.props.asteroidsData.near_earth_objects)
         // console.log('obj obj obj obj obj', Object.assign({}, this.props.asteroidsData.near_earth_objects))
         return (
@@ -99,36 +152,22 @@ class NearbyAsteroids extends Component {
                         </th>
                     </tr>
                     </thead>
-                    {_.map(arr, (data) => (
-                        <tbody>
-                        <tr>
-                            <td>{data.name}</td>
-                            <td>{data.estimated_diameter.kilometers.estimated_diameter_min} -
-                                {data.estimated_diameter.kilometers.estimated_diameter_max}</td>
-                            <td>{data.absolute_magnitude_h}</td>
-                            <td>No</td>
-                            <td>{data.estimated_diameter.meters.estimated_diameter_min} -
-                                {data.estimated_diameter.meters.estimated_diameter_max}</td>
-                        </tr>
-                        </tbody>
-                    ))}
+                    <tbody id="pagination">
+                    {this.state.postData}
+                    </tbody>
                 </table>
-                <Pagination arr={arr}/>
-                {/*<div id='pagination'>*/}
-                {/*    {this.state.postData}*/}
-                {/*    <ReactPaginate*/}
-                {/*        previousLabel={"prev"}*/}
-                {/*        nextLabel={"next"}*/}
-                {/*        breakLabel={"..."}*/}
-                {/*        breakClassName={"break-me"}*/}
-                {/*        pageCount={this.state.pageCount}*/}
-                {/*        marginPagesDisplayed={2}*/}
-                {/*        pageRangeDisplayed={5}*/}
-                {/*        onPageChange={this.handlePageClick}*/}
-                {/*        containerClassName={"pagination"}*/}
-                {/*        subContainerClassName={"pages pagination"}*/}
-                {/*        activeClassName={"active"}/>*/}
-                {/*</div>*/}
+                <ReactPaginate
+                    previousLabel={"prev"}
+                    nextLabel={"next"}
+                    breakLabel={"..."}
+                    breakClassName={"break-me"}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}/>
 
             </Wrapper>
         );
