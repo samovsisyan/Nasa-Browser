@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/nasa-browser/static/css/main.132f99f5.chunk.css",
-    "main.js": "/nasa-browser/static/js/main.fa8eb5c9.chunk.js",
-    "main.js.map": "/nasa-browser/static/js/main.fa8eb5c9.chunk.js.map",
-    "runtime-main.js": "/nasa-browser/static/js/runtime-main.2277b2ed.js",
-    "runtime-main.js.map": "/nasa-browser/static/js/runtime-main.2277b2ed.js.map",
-    "static/js/2.782524c4.chunk.js": "/nasa-browser/static/js/2.782524c4.chunk.js",
-    "static/js/2.782524c4.chunk.js.map": "/nasa-browser/static/js/2.782524c4.chunk.js.map",
-    "static/js/3.6f078c68.chunk.js": "/nasa-browser/static/js/3.6f078c68.chunk.js",
-    "static/js/3.6f078c68.chunk.js.map": "/nasa-browser/static/js/3.6f078c68.chunk.js.map",
-    "index.html": "/nasa-browser/index.html",
-    "service-worker.js": "/nasa-browser/service-worker.js",
-    "service-worker.js.map": "/nasa-browser/service-worker.js.map",
-    "static/css/main.132f99f5.chunk.css.map": "/nasa-browser/static/css/main.132f99f5.chunk.css.map",
-    "static/js/2.782524c4.chunk.js.LICENSE.txt": "/nasa-browser/static/js/2.782524c4.chunk.js.LICENSE.txt"
+    "main.css": "/Nasa-Browser/static/css/main.132f99f5.chunk.css",
+    "main.js": "/Nasa-Browser/static/js/main.745c7d0a.chunk.js",
+    "main.js.map": "/Nasa-Browser/static/js/main.745c7d0a.chunk.js.map",
+    "runtime-main.js": "/Nasa-Browser/static/js/runtime-main.5b34cd0b.js",
+    "runtime-main.js.map": "/Nasa-Browser/static/js/runtime-main.5b34cd0b.js.map",
+    "static/js/2.6849a832.chunk.js": "/Nasa-Browser/static/js/2.6849a832.chunk.js",
+    "static/js/2.6849a832.chunk.js.map": "/Nasa-Browser/static/js/2.6849a832.chunk.js.map",
+    "static/js/3.6f078c68.chunk.js": "/Nasa-Browser/static/js/3.6f078c68.chunk.js",
+    "static/js/3.6f078c68.chunk.js.map": "/Nasa-Browser/static/js/3.6f078c68.chunk.js.map",
+    "index.html": "/Nasa-Browser/index.html",
+    "service-worker.js": "/Nasa-Browser/service-worker.js",
+    "service-worker.js.map": "/Nasa-Browser/service-worker.js.map",
+    "static/css/main.132f99f5.chunk.css.map": "/Nasa-Browser/static/css/main.132f99f5.chunk.css.map",
+    "static/js/2.6849a832.chunk.js.LICENSE.txt": "/Nasa-Browser/static/js/2.6849a832.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2277b2ed.js",
-    "static/js/2.782524c4.chunk.js",
+    "static/js/runtime-main.5b34cd0b.js",
+    "static/js/2.6849a832.chunk.js",
     "static/css/main.132f99f5.chunk.css",
-    "static/js/main.fa8eb5c9.chunk.js"
+    "static/js/main.745c7d0a.chunk.js"
   ]
 }
